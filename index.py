@@ -12,3 +12,8 @@ main_size = standard_shape[0] * standard_shape[1]
 # print(main_size)
 box = np.empty((0, 4), dtype=int)
 plate_name = "plate.jpg"
+
+# Define load_img function
+def load_img(image):
+    img = cv2.resize(cv2.imread(image, 0), (standard_shape[0], standard_shape[1])).flatten()
+    return img
