@@ -28,5 +28,3 @@ for i in range(1, 10):
         img = load_img("dataset/" + str(i) + "/" + filename)
         images_arr = np.append(images_arr, [img], axis=0)
         numbers_arr = np.append(numbers_arr, i)
-
-print(numbers_arr)
