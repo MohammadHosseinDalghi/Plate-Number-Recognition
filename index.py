@@ -45,4 +45,9 @@ out = model.predict(X_test)
 plate_base = cv2.imread(plate_name)
 plate_base = cv2.resize(plate_base, (410, 90))
 plate = plate_base.copy()
-plate = cv2.cvtColor(plate, 64, 255, cv2.THRESH_BINARY)
+plate = cv2.cvtColor(plate, cv2.COLOR_BGR2GRAY)
+_, plate = cv2.threshold(plate, 64, 255, cv2.THRESH_BINARY)
+
+# visualising images
+plot = 90 - np.sum(plate, axis=0, keepdims=True) / 255
+plt.plot(plot[0])
