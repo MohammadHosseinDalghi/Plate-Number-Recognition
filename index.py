@@ -28,3 +28,9 @@ for i in range(1, 10):
         img = load_img("dataset/" + str(i) + "/" + filename)
         images_arr = np.append(images_arr, [img], axis=0)
         numbers_arr = np.append(numbers_arr, i)
+
+# Modelling with Logistic Regression
+X_train, X_test, y_train, y_test = train_test_split(images_arr,
+                                                    numbers_arr, 
+                                                    test_size=0.2)
+model = linear_model.LogisticRegression(max_iter=100000)
