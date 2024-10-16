@@ -11,7 +11,7 @@ standard_shape = (8, 32)
 main_size = standard_shape[0] * standard_shape[1]
 # print(main_size)
 box = np.empty((0, 4), dtype=int)
-plate_name = "plate2.jpg"
+plate_name = "plate3.jpg"
 
 # Define load_img function
 def load_img(image):
@@ -81,12 +81,24 @@ for index, plot_value in enumerate(plot[0]):
             out = model.predict([new_picf])
             print(out[0], end="")
             final_number = final_number + str(out[0])
+            cv2.imshow('plate', new_piccolor)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
     
-        prev_value = plot_value
+    prev_value = plot_value
 
 # Placing the numbers predicted by the model under the plate photo
 under_plate = plate_base[0:50].copy()
 np.ndarray.fill(under_plate[0:50], 255)
 plate_base = np.append(plate_base, under_plate, axis=0)
 cv2.putText(plate_base, "plate number : " + final_number, (10,120), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255,0,255), 1, cv2.LINE_AA)
+print()
 print(str(final_number))
+
+# visualize plate photo
+cv2.imshow('plate', plate_base)
+cv2.waitKey(0)
+cv2.imshow('plate', plate)
+cv2.waitKey(0)
+
+cv2.destroyAllWindows()
