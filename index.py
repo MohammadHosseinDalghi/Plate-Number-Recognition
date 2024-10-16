@@ -36,3 +36,7 @@ X_train, X_test, y_train, y_test = train_test_split(images_arr,
 model = linear_model.LogisticRegression(max_iter=100000)
 # fitting the model
 model.fit(X_train, y_train)
+
+# predicting with our logistic regression
+out = model.predict(X_test)
+# print(out)
