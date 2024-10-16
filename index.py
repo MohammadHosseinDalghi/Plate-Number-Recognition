@@ -40,3 +40,9 @@ model.fit(X_train, y_train)
 # predicting with our logistic regression
 out = model.predict(X_test)
 # print(out)
+
+# preparing images
+plate_base = cv2.imread(plate_name)
+plate_base = cv2.resize(plate_base, (410, 90))
+plate = plate_base.copy()
+plate = cv2.cvtColor(plate, 64, 255, cv2.THRESH_BINARY)
