@@ -61,3 +61,26 @@ end_index = 0
 
 prev_value = 0
 final_number = ""
+
+# reading images and predicting numbers
+for index, plot_value in enumerate(plot[0]):
+    if plot_value >= linethreshold and prev_value < linethreshold:
+        start_index = index
+
+    if plot_value < linethreshold and prev_value >= linethreshold:
+        width = index - start_index
+        if width > max_width:
+            final_number = final_number + " "
+
+        if width > min_width and width < max_width:
+            end_index = index
+            cv2.rectangle(plate_base, (start_index, 0), (end_index, 89), (255,255,0), 1)
+            new_pic = plate[:, start_index:end_index]
+            new_piccolor = plate_base[:, start_index:end_index]
+            new_picf = cv2.resize(new_pic, (standard_shape[0], standard_shape[1])).flatten()
+            out = model.predict([new_picf])
+            print(out[0], end="")
+            final_number = final_number + str(out[0])
+    
+
+    prev_value = plot_value
