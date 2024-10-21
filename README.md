@@ -65,7 +65,7 @@ Each folder contains multiple images of the respective digit for training the mo
 ## Usage
 1. Clone the repository and navigate to the project directory:
 ```bash
-git clone https://github.com/MohammadHosseinDalghi/Plate-Number-Recognition
+git clone https://github.com/MohammadHosseinDalghi/Plate-Number-Recognition.git
 cd Plate-Number-Recognition
 ```
 2. Ensure you have the correct dataset structure as described above.
