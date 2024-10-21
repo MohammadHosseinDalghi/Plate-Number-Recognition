@@ -19,7 +19,7 @@ The workflow involves:
 - Predicts and prints the final plate number.
 
 ## Requirements
-- Python 3.x
+- Python 3.x ( I used 3.8.8)
 - OpenCV
 - scikit-learn
 - Numpy
@@ -27,7 +27,10 @@ The workflow involves:
 
 You can install the required libraries using:
 ```bash
-pip install -r requirements.txt
+pip install opencv-python
+pip install scikit-learn
+pip install numpy
+pip install matplotlib
 ```
 
 ## Data Structure
@@ -62,22 +65,15 @@ Each folder contains multiple images of the respective digit for training the mo
 ## Usage
 1. Clone the repository and navigate to the project directory:
 ```bash
-git clone <repository_url>
-cd <repository_directory>
+git clone https://github.com/MohammadHosseinDalghi/Plate-Number-Recognition
+cd Plate-Number-Recognition
 ```
 2. Ensure you have the correct dataset structure as described above.
 3. Run the project:
 ```bash
-python plate_recognition.py
+python index.py
 ```
 4. Provide the license plate image in the script, and the model will predict the numbers.
 
 ## Results
 The predicted license plate number is printed on the console and displayed on the image. Each detected digit is visualized with a bounding box on the plate.
-
-## Future Improvements
-- Improve accuracy with more robust pre-processing techniques.
-- Implement other machine learning models (e.g., CNN) for better accuracy.
-- Use a more diverse dataset to handle different fonts, sizes, and noisy backgrounds.
-
-
