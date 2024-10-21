@@ -1,17 +1,6 @@
 # License Plate Number Recognition using Logistic Regression
 
 This project is designed to detect and recognize numbers from vehicle license plates using Logistic Regression. It leverages OpenCV for image processing, and scikit-learn for machine learning.
-
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Dataset Structure](#dataset-structure)
-- [How it Works](#how-it-works)
-- [Usage](#usage)
-- [Results](#results)
-- [Future Improvements](#future-improvements)
-- [Contributors](#contributors)
   
 ## Overview
 This project uses a machine learning model to recognize digits from images of license plates. The goal is to extract individual numbers from the plate image and predict the digits using logistic regression.
