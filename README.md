@@ -53,6 +53,21 @@ dataset/
 ```
 Each folder contains multiple images of the respective digit for training the model.
 
+## How It Works:
 
-
-
+1. Image Preprocessing:
+    - License plate images are resized to a standard size of 8x32 pixels and flattened.
+    - The plate image is converted to grayscale and blurred to reduce noise.
+    - A binary threshold is applied to highlight the digits on the plate.
+2. Model Training:
+    - The digit dataset is loaded and used to train a logistic regression model. Each digit is flattened into a feature vector.
+    - The model is trained using the `train_test_split` function from scikit-learn, with an 80/20 split between training and test sets.
+3. Number Detection:
+    - The code analyzes pixel intensity across columns to locate the boundaries of each digit on the plate.
+    - If a significant change in intensity is detected (based on a threshold), the region is isolated as a potential digit.
+4. Prediction:
+    - The extracted digit region is resized to the standard shape and flattened.
+    - The trained logistic regression model predicts the digit.
+    - The final number is displayed on the image.
+  
+## Usage
