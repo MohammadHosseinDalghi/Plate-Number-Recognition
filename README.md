@@ -71,3 +71,24 @@ Each folder contains multiple images of the respective digit for training the mo
     - The final number is displayed on the image.
   
 ## Usage
+1. Clone the repository and navigate to the project directory:
+```bash
+git clone <repository_url>
+cd <repository_directory>
+```
+2. Ensure you have the correct dataset structure as described above.
+3. Run the project:
+```bash
+python plate_recognition.py
+```
+4. Provide the license plate image in the script, and the model will predict the numbers.
+
+## Results
+The predicted license plate number is printed on the console and displayed on the image. Each detected digit is visualized with a bounding box on the plate.
+
+## Future Improvements
+- Improve accuracy with more robust pre-processing techniques.
+- Implement other machine learning models (e.g., CNN) for better accuracy.
+- Use a more diverse dataset to handle different fonts, sizes, and noisy backgrounds.
+
+
