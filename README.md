@@ -39,3 +39,20 @@ The workflow involves:
 You can install the required libraries using:
 ```bash
 pip install -r requirements.txt
+```
+
+## Data Structure
+The project assumes that the dataset is structured as follows:
+```bash
+dataset/
+│
+├── 1/     # Folder containing images of the digit 1
+├── 2/     # Folder containing images of the digit 2
+├── ...
+├── 9/     # Folder containing images of the digit 9
+```
+Each folder contains multiple images of the respective digit for training the model.
+
+
+
+
